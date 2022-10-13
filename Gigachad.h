@@ -1,20 +1,23 @@
-#ifndef PLAYABLE
-#define PLAYABLE
-
+#ifndef GIGACHAD
+#define GIGACHAD
 
 #include<string>
 #include<iostream>
 #include "character.h"
 
-class playable: public character{
+class Gigachad: public character{
   public:
-    playable();
+    Gigachad();
+    void returnStats();
+    
+
     void attack();
     void heal();
     void boost();
 
-    ~playable();
+    ~Gigachad();
 
 };
+
 
 #endif

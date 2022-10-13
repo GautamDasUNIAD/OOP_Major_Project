@@ -5,7 +5,7 @@
 #include<iostream>
 #include "character.h"
 
-class SleepyJeff: private character{
+class SleepyJeff: public character{
   public:
     SleepyJeff();
     void returnStats();

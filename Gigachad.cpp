@@ -1,31 +1,31 @@
 #include<string>
 #include<iostream>
 #include "character.h"
-#include "SleepyJeff.h"
+#include "Gigachad.h"
 
-SleepyJeff::SleepyJeff(){
-  set_Name("SleepyJeff");
-  set_Max_HP(10);
 
-  set_Current_HP(10);
-  set_damage_factor(1.5);
-  set_healing_factor(1);
-  set_critical(5);
+
+Gigachad::Gigachad(){
+  set_Name("Gigachad");
+  set_Max_HP(20);
+
+  set_Current_HP(20);
+  set_damage_factor(2);
+  set_healing_factor(2);
+  set_critical(2);
 }
 
-void SleepyJeff::returnStats(){
+void Gigachad::returnStats(){
   std::cout << "Your attack stat is: " << get_damage_factor() << std::endl;
   std::cout << "Your healing stat is: " << get_healing_factor() << std::endl;
   std::cout << "Your critical stat is: " << get_critical() << std::endl;
   std::cout << "Your Maximum HP is: " << get_Max_HP() << std::endl;
   std::cout << "Your Current HP is: " << get_Current_HP() << std::endl;
 }
-    
-
-void SleepyJeff::attack(){};
-void SleepyJeff::heal(){};
-void SleepyJeff::boost(){};
 
 
+void Gigachad::attack(){}
+void Gigachad::heal(){}
+void Gigachad::boost(){}
 
-SleepyJeff::~SleepyJeff(){};
+Gigachad::~Gigachad(){}
