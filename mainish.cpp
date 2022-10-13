@@ -8,25 +8,31 @@
 
 int main(void){
   SleepyJeff Jeff;
+  SleepyJeff* Jptr = &Jeff;
   attackmove attack;
   Gigachad chad;  
   Gigachad *gigaptr;
   gigaptr = &chad;
+  // playable play;
 
-
+  std::cout << "Start of game" << std::endl;
   // Jeff.returnStats();
+  std::cout << "Player goes first \n " << std::endl;
+  
+  
 
-  std::cout << chad.get_Current_HP() << std::endl;
+  attack.Deal_damage_player(Jeff, gigaptr);
 
-
-  attack.Deal_damage(Jeff, gigaptr);
+  std::cout << "Gigachad's new health is: " << chad.get_Current_HP() << std::endl;
 
   // Gigachad.set_Current_HP(Gigachad.get_Current_HP()-15);
 
-  std::cout << chad.get_Current_HP() << std::endl;
+  if (chad.choosemove()==1){
+    std::cout << "Gigachad chose to attack" << std::endl;
+    attack.Deal_damage_chad(Jptr, gigaptr);
+  }
 
-  // Gigachad.returnStats();
-
+  std::cout << "Your health is" << Jeff.get_Current_HP() << std::endl;
 
   return 0;
 }

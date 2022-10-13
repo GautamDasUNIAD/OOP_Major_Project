@@ -20,12 +20,7 @@ void SleepyJeff::returnStats(){
   std::cout << "Your Maximum HP is: " << get_Max_HP() << std::endl;
   std::cout << "Your Current HP is: " << get_Current_HP() << std::endl;
 }
-    
-
 void SleepyJeff::attack(){};
 void SleepyJeff::heal(){};
 void SleepyJeff::boost(){};
-
-
-
 SleepyJeff::~SleepyJeff(){};

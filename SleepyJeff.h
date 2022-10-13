@@ -4,8 +4,9 @@
 #include<string>
 #include<iostream>
 #include "character.h"
+#include "playable.h"
 
-class SleepyJeff: public character{
+class SleepyJeff: public playable{
   public:
     SleepyJeff();
     void returnStats();

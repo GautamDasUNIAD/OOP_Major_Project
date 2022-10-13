@@ -1,25 +1,22 @@
-#ifndef GIGACHAD
-#define GIGACHAD
+#ifndef LAZYBONES
+#define LAZYBONES
 
 #include<string>
 #include<iostream>
 #include "character.h"
-#include <cstdlib>
+#include "playable.h"
 
-class Gigachad: public character{
+class Lazybones: public playable{
   public:
-    Gigachad();
+    Lazybones();
     void returnStats();
-    int choosemove();
     
 
     void attack();
     void heal();
     void boost();
 
-    ~Gigachad();
-
+    ~Lazybones();
 };
-
 
 #endif

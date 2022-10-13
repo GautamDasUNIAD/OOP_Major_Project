@@ -1,25 +1,22 @@
-#ifndef GIGACHAD
-#define GIGACHAD
+#ifndef SLEEPYJEFF
+#define SLEEPYJEFF
 
 #include<string>
 #include<iostream>
 #include "character.h"
-#include <cstdlib>
+#include "playable.h"
 
-class Gigachad: public character{
+class Snorlax: public playable{
   public:
-    Gigachad();
+    Snorlax();
     void returnStats();
-    int choosemove();
     
 
     void attack();
     void heal();
     void boost();
 
-    ~Gigachad();
-
+    ~Snorlax();
 };
-
 
 #endif
