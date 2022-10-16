@@ -7,9 +7,8 @@
 
 Gigachad::Gigachad(){
   set_Name("Gigachad");
-  set_Max_HP(20);
-
-  set_Current_HP(20);
+  set_Max_HP(100);
+  set_Current_HP(100);
   set_damage_factor(2);
   set_healing_factor(2);
   set_critical(2);

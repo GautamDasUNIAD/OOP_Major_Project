@@ -16,7 +16,7 @@ class attackmove{
   public:
     
     attackmove();
-    void Deal_damage_player(playable player, Gigachad* gigaptr);
+    void Deal_damage_player(playable* pptr, Gigachad* gigaptr);
     void Deal_damage_chad(playable* pptr, Gigachad* gigaptr);
     ~attackmove();
 };
