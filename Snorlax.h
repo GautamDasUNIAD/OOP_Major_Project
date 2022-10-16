@@ -1,16 +1,16 @@
 #ifndef SNORLAX
 #define SNORLAX
 
-#include<string>
-#include<iostream>
+#include <iostream>
+#include <string>
+
 #include "character.h"
 #include "playable.h"
 
-class Snorlax: public playable{
-  public:
+class Snorlax : public playable {
+   public:
     Snorlax();
     void returnStats();
-    
 
     void attack();
     void heal();

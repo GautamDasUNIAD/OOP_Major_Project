@@ -1,20 +1,20 @@
-#ifndef ATTACKMOVE 
+#ifndef ATTACKMOVE
 #define ATTACKMOVE
 
-#include<string>
-#include<iostream>
-#include "character.h"
-#include "SleepyJeff.h"
+#include <iostream>
+#include <string>
+
+#include "Gigachad.h"
+#include "Lazybones.h"
 #include "SleepyJeff.h"
 #include "Snorlax.h"
-#include "Lazybones.h"
-#include "Gigachad.h"
+#include "character.h"
 
-class attackmove{
-  private:
+class attackmove {
+   private:
     int damage = 10;
-  public:
-    
+
+   public:
     attackmove();
     void Deal_damage_player(playable* pptr, Gigachad* gigaptr);
     void Deal_damage_chad(playable* pptr, Gigachad* gigaptr);

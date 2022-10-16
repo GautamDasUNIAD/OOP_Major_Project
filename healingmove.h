@@ -1,18 +1,20 @@
-#ifndef HEALINGMOVE 
+#ifndef HEALINGMOVE
 #define HEALINGMOVE
 
-#include<string>
-#include<iostream>
-#include "character.h"
+#include <iostream>
+#include <string>
+
+#include "Gigachad.h"
+#include "Lazybones.h"
 #include "SleepyJeff.h"
 #include "Snorlax.h"
-#include "Lazybones.h"
-#include "Gigachad.h"
+#include "character.h"
 
-class healingmove{
-  private:
+class healingmove {
+   private:
     int heal = 10;
-  public:
+
+   public:
     healingmove();
     void heal_health_player(playable* pptr);
     void heal_health_chad(Gigachad* gigaptr);

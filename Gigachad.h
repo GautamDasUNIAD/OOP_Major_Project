@@ -1,25 +1,23 @@
 #ifndef GIGACHAD
 #define GIGACHAD
 
-#include<string>
-#include<iostream>
-#include "character.h"
 #include <cstdlib>
+#include <iostream>
+#include <string>
 
-class Gigachad: public character{
-  public:
+#include "character.h"
+
+class Gigachad : public character {
+   public:
     Gigachad();
     void returnStats();
     int choosemove();
-    
 
     void attack();
     void heal();
     void boost();
 
     ~Gigachad();
-
 };
-
 
 #endif
