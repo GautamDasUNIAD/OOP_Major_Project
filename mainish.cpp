@@ -2,14 +2,27 @@
 #include<iostream>
 #include "character.h"
 #include "SleepyJeff.h"
+#include "Snorlax.h"
+#include "Lazybones.h"
 #include "attackmove.h"
 #include "Gigachad.h"
 #include "playable.h"
+#include "statboostingmove.h"
+#include "healingmove.h"
+#include "attackmove.h"
+
 
 int main(void){
   SleepyJeff Jeff;
   SleepyJeff* Jptr = &Jeff;
+  Snorlax snorlax;
+  Snorlax* snorptr = &snorlax;
+  Lazybones bones;
+  Lazybones* bptr = &bones;
+  
   attackmove attack;
+  statboostingmove statboost;
+  healingmove heal;
   Gigachad chad;  
   Gigachad *gigaptr;
   gigaptr = &chad;
@@ -17,22 +30,52 @@ int main(void){
 
   std::cout << "Start of game" << std::endl;
   // Jeff.returnStats();
-  std::cout << "Player goes first \n " << std::endl;
+  std::cout << "Showing player stats" << std::endl;
+  Jeff.returnStats();
+  
+//   std::cout << "Using stat boost move\n";
+//   statboost.boost_stats_player(Jptr);
+
+//   std::cout << "Showing player stats" << std::endl;
+//   Jeff.returnStats();
+
   
   
 
-  attack.Deal_damage_player(Jeff, gigaptr);
+  attack.Deal_damage_chad(Jptr, gigaptr);
+  Jeff.returnStats();
+  heal.heal_health_player(Jptr);
 
-  std::cout << "Gigachad's new health is: " << chad.get_Current_HP() << std::endl;
+  
+  std::cout << "\n\n";
 
-  // Gigachad.set_Current_HP(Gigachad.get_Current_HP()-15);
+  bones.returnStats();
 
-  if (chad.choosemove()==1){
-    std::cout << "Gigachad chose to attack" << std::endl;
-    attack.Deal_damage_chad(Jptr, gigaptr);
-  }
+  std::cout << "\n\n";
 
-  std::cout << "Your health is" << Jeff.get_Current_HP() << std::endl;
+  snorlax.returnStats();
 
-  return 0;
+
+
+
+  
+  
+
+//   attack.Deal_damage_player(Jeff, gigaptr);
+
+//   std::cout << "Gigachad's new health is: " << chad.get_Current_HP() << std::endl;
+
+//   // Gigachad.set_Current_HP(Gigachad.get_Current_HP()-15);
+
+//   if (chad.choosemove()==1){
+//     std::cout << "Gigachad chose to attack" << std::endl;
+//     attack.Deal_damage_chad(Jptr, gigaptr);
+//   }
+
+//   std::cout << "Your health is" << Jeff.get_Current_HP() << std::endl;
+
+
+  
+
+//   return 0;
 }

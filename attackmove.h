@@ -5,7 +5,9 @@
 #include<iostream>
 #include "character.h"
 #include "SleepyJeff.h"
-#include "attackmove.h"
+#include "SleepyJeff.h"
+#include "Snorlax.h"
+#include "Lazybones.h"
 #include "Gigachad.h"
 
 class attackmove{
@@ -16,6 +18,7 @@ class attackmove{
     attackmove();
     void Deal_damage_player(playable player, Gigachad* gigaptr);
     void Deal_damage_chad(playable* pptr, Gigachad* gigaptr);
+    ~attackmove();
 };
 
 #endif

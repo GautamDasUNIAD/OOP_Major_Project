@@ -1,5 +1,5 @@
-#ifndef SLEEPYJEFF
-#define SLEEPYJEFF
+#ifndef SNORLAX
+#define SNORLAX
 
 #include<string>
 #include<iostream>

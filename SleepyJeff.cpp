@@ -8,7 +8,7 @@ SleepyJeff::SleepyJeff(){
   set_Max_HP(10);
 
   set_Current_HP(10);
-  set_damage_factor(1.5);
+  set_damage_factor(1);
   set_healing_factor(1);
   set_critical(5);
 }
