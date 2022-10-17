@@ -14,7 +14,11 @@ void statboostingmove::boost_stats_player(playable* pptr) {
         pptr->get_damage_factor() + additional_damage_factor;
     int new_healing_factor =
         pptr->get_healing_factor() + additional_healing_factor;
-    int new_critical = pptr->get_critical() - reduce_critical;
+    int new_critical;
+    if(pptr->get_critical() - reduce_critical > 0){
+      new_critical = pptr->get_critical() - reduce_critical;
+    }
+    
     std::cout << "Increased Stats for " << pptr->get_Name() << std::endl;
     pptr->set_damage_factor(new_damage_factor);
     pptr->set_healing_factor(new_healing_factor);

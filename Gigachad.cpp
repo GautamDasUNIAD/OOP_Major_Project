@@ -42,11 +42,11 @@ Gigachad::Gigachad() {
 }
 
 void Gigachad::returnStats() {
-    std::cout << "Your attack stat is: " << get_damage_factor() << std::endl;
-    std::cout << "Your healing stat is: " << get_healing_factor() << std::endl;
-    std::cout << "Your critical stat is: " << get_critical() << std::endl;
-    std::cout << "Your Maximum HP is: " << get_Max_HP() << std::endl;
-    std::cout << "Your Current HP is: " << get_Current_HP() << std::endl;
+    std::cout << " attack stat is: " << get_damage_factor() << std::endl;
+    std::cout << " healing stat is: " << get_healing_factor() << std::endl;
+    std::cout << " critical stat is: " << get_critical() << std::endl;
+    std::cout << " Maximum HP is: " << get_Max_HP() << std::endl;
+    std::cout << " Current HP is: " << get_Current_HP() << std::endl;
 }
 
 int Gigachad::choosemove() {
@@ -58,4 +58,4 @@ void Gigachad::attack() {}
 void Gigachad::heal() {}
 void Gigachad::boost() {}
 
-Gigachad::~Gigachad() {}
+Gigachad::~Gigachad(){}
