@@ -1,4 +1,4 @@
-// This is the header file for the "Lazybones" class 
+// This is the header file for the "Sleepyjeff" class 
 #ifndef SLEEPYJEFF
 #define SLEEPYJEFF
 
