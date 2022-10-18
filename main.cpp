@@ -1,7 +1,11 @@
+// this is the main file of the sleepfighter project
+
+// include relevant libaries
 #include <iostream>
 #include <memory>
 #include <string>
 
+// include relevant header files
 #include "Gigachad.h"
 #include "Lazybones.h"
 #include "SleepyJeff.h"
@@ -13,10 +17,13 @@
 #include "statboostingmove.h"
 
 void play_game(playable* pptr) {
+    // this function takes the player pointer as the argument and based on the runs the fight simulation along with the stage
+    
     Gigachad chad;  // create Gigachad object with the name chad
     Gigachad* gigaptr =
         &chad;  // create pointer to chad to be able to make changes to the
                 // object's variables within functions
+    // create objects for moves
     attackmove attack;
     statboostingmove statboost;
     healingmove heal;
