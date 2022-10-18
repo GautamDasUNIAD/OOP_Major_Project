@@ -24,7 +24,7 @@ void statboostingmove::boost_stats_player(playable* pptr) {
     int new_healing_factor =
         pptr->get_healing_factor() + additional_healing_factor;
     // reduce critical by 1, only reduce if it is currently above 1
-    int new_critical;
+    int new_critical = pptr->get_critical();
     if(pptr->get_critical() - reduce_critical > 0){
       new_critical = pptr->get_critical() - reduce_critical;
     }
@@ -46,7 +46,10 @@ void statboostingmove::boost_stats_chad(Gigachad* gigaptr) {
     int new_healing_factor =
         gigaptr->get_healing_factor() + additional_healing_factor;
     // reduce critical by 1, only reduce if it is currently above 1
-    int new_critical = gigaptr->get_critical() - reduce_critical;
+    int new_critical = gigaptr->get_critical();
+    if(gigaptr->get_critical() - reduce_critical > 0){
+      new_critical = gigaptr->get_critical() - reduce_critical;
+    }
     
     // notify user that stats have been increased
     std::cout << "Increased Stats for " << gigaptr->get_Name() << std::endl;

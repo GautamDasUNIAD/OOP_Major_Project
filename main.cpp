@@ -4,6 +4,7 @@
 #include <iostream>
 #include <memory>
 #include <string>
+#include <fstream>
 
 // include relevant header files
 #include "Gigachad.h"
@@ -23,11 +24,19 @@ void play_game(playable* pptr) {
     Gigachad* gigaptr =
         &chad;  // create pointer to chad to be able to make changes to the
                 // object's variables within functions
+    
     // create objects for moves
     attackmove attack;
     statboostingmove statboost;
     healingmove heal;
-    char move_choice;  // stores the choice of move made by t he player
+    char move_choice;  // stores the choice of move made by the player
+
+    int move_count=0; // counter variable to store number of moves played
+    int* move_history; // array to store move history
+    int* new_move_history; // array that can be used to increase size of move_history array
+
+    
+    
     std::string* player_ascii =
         pptr->get_ASCII();  // stores the ascii representation of player's
                             // character
@@ -87,6 +96,7 @@ void play_game(playable* pptr) {
             std::cin >> move_choice;
             std::cout << "\n";
         }
+    
 
         // play corresponding move
         if (move_choice == 49) {
@@ -96,8 +106,44 @@ void play_game(playable* pptr) {
         } else if (move_choice == 51) {
             statboost.boost_stats_player(pptr);
         }
-        if (gigaptr->get_Current_HP() >
-            0) {  // check if Gigachad has any health left
+
+        // increase counter for number of moves 
+        move_count++;
+
+        // notify user of how many moves have been played
+        std::cout << move_count << " moves have been played" << std::endl;
+        
+
+        // if it is the first move, just add the move to the move_history array
+        if(move_count == 1){
+          move_history = new int[1];
+          move_history[0] = move_choice - 48;
+          
+        }
+        else{
+        // allocate enough memory for current number of moves
+        new_move_history = new int[move_count];
+        
+
+        // copy all previous moves from move_history array to new_move_history array
+        for(int i = 0; i < move_count-1; i++){
+            new_move_history[i] = move_history[i];
+        }
+        
+
+        // add latest move to array
+        new_move_history[move_count-1] = move_choice - 48; // take 48 will change it from 49 (because it was initially a char)-> 1 
+
+        // delete old move_history array
+        delete move_history;
+        
+
+        // make the move_history array point to the current array
+        move_history = new_move_history;
+        
+        }
+
+        if (gigaptr->get_Current_HP() > 0) {  // check if Gigachad has any health left
             std::cout << "Gigachad's move. ";
             int choice = gigaptr->choosemove();  // use method to randomly
                                                  // choose move for gigachad
@@ -114,12 +160,51 @@ void play_game(playable* pptr) {
             }
         }
     }
+
+    
+
+    
+    
+
+    
+
+
     // find which character lost their health and declare winner
     if (pptr->get_Current_HP() <= 0) {
         std::cout << pptr->get_Name() << " died.\n You lost\n";
-    } else if (gigaptr->get_Current_HP() <= 0) {
-        std::cout << gigaptr->get_Name() << " died.\n You Win\n";
     }
+    else if (gigaptr->get_Current_HP() <= 0) {
+        std::cout << gigaptr->get_Name() << " died.\n You Win\n";
+        
+        // open file containing move_records in read mode
+        // initialize some variables
+        std::string text;
+        std::ifstream file;
+        file.open ("move_records.txt");
+
+        getline(file,text);
+        
+        
+        file.close();
+
+        // write to file if it was a new record
+        if(move_count < text[0]-48 ){ // if it is a new record, - 48 for convertion from char "number" to int "number"
+            std::cout << "Great job, that was a new high score, saving record...\n";
+            // open file containing move_records in write mode to overwrite what is already in there
+            std::ofstream new_file;
+            new_file.open("move_records.txt");
+            
+            new_file << move_count << std::endl;
+            for(int i=0; i < move_count; i++) {
+              new_file << move_history[i] << " ";
+            }
+
+            new_file.close();
+        }
+    }
+
+    
+    
 
     // delete objects
     // delete (gigaptr);
